@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 var MongoClient = require('mongodb').MongoClient;
 const mongoose = require("mongoose");
@@ -96,7 +96,7 @@ const getGeoPosition = (address, finalArray, count) => {
             let obj = {};
             obj.add = element;
             obj.location = [];
-            let response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${element}&key=${process.env.GeocodingApi}`);
+            let response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${element}&key=AIzaSyA5bwbEsAOUMOI4RK2zXcIayG4vjuQSpcw`);
             response = await response.json();
             // console.log(response.results[0].geometry.location);
             obj.location.push(response.results[0].geometry.location.lat);
